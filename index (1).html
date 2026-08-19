@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jaehyun Lee — Tourism Science</title>
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<style>
+:root{
+  --bg:#0A0A0A;
+  --fg:#FFFFFF;
+  --meta:#8A8A8A;
+  --line:rgba(255,255,255,0.14);
+  --line-dark:rgba(0,0,0,0.12);
+  --maxw:1200px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  font-family:"Pretendard Variable",Pretendard,-apple-system,system-ui,sans-serif;
+  background:var(--bg);color:var(--fg);
+  font-weight:400;line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+a:focus-visible{outline:2px solid #fff;outline-offset:3px}
+
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 32px}
+
+/* ---------- 헤더 ---------- */
+.site-header{padding:26px 0}
+.header-inner{display:flex;align-items:center;justify-content:space-between;gap:32px}
+.logo{font-size:20px;font-weight:400;letter-spacing:-0.01em;white-space:nowrap}
+.nav{display:flex;gap:34px;font-size:14px;color:#D8D8D8}
+.nav a:hover{color:#fff}
+.btn-ghost{
+  border:1px solid var(--line);border-radius:100px;
+  padding:9px 20px;font-size:13px;white-space:nowrap;
+}
+.btn-ghost:hover{background:#fff;color:#0A0A0A;border-color:#fff}
+
+/* ---------- 히어로 ---------- */
+.hero{display:grid;grid-template-columns:1fr 1fr 1fr;gap:44px;padding:34px 0 56px}
+
+.headline{
+  font-size:60px;font-weight:300;
+  line-height:1.06;letter-spacing:-0.025em;
+  margin-bottom:34px;
+}
+.dek{font-size:14px;line-height:1.65;color:#C9C9C9;max-width:34em}
+.byline{
+  margin-top:auto;padding-top:52px;
+  font-size:12.5px;color:var(--meta);
+  display:flex;flex-wrap:wrap;gap:14px;align-items:center;
+}
+.byline span:not(:last-child)::after{content:"";display:inline-block;width:1px;height:11px;background:var(--meta);margin-left:14px;vertical-align:-1px}
+.hero-left{display:flex;flex-direction:column}
+
+/* 가운데 이미지 — 세로 3:4 */
+.hero-figure{aspect-ratio:3/4;background:#1C1C1C center/cover no-repeat}
+
+/* 오른쪽 리스트 */
+.stack{display:flex;flex-direction:column;gap:0}
+.item{display:grid;grid-template-columns:104px 1fr;gap:18px;padding:18px 0}
+.item + .item{border-top:1px solid var(--line)}
+.item:first-child{padding-top:0}
+.item .thumb{aspect-ratio:1/1;background:#1C1C1C center/cover no-repeat}
+.item-meta{font-size:11.5px;color:var(--meta);display:flex;gap:12px;align-items:center}
+.item-meta i{font-style:normal;width:1px;height:10px;background:var(--meta);display:inline-block}
+.item h3{
+  font-size:16px;font-weight:400;line-height:1.34;letter-spacing:-0.015em;
+  margin:7px 0 9px;
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;
+}
+.item a:hover h3{text-decoration:underline;text-underline-offset:3px}
+
+/* ---------- 하단 4단 ---------- */
+.strip{border-top:1px solid var(--line);padding:30px 0 72px}
+.strip-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:36px}
+.strip .item-meta{margin-bottom:11px}
+.strip h3{font-size:17px;font-weight:400;line-height:1.34;letter-spacing:-0.015em;margin-bottom:11px}
+.strip a:hover h3{text-decoration:underline;text-underline-offset:3px}
+
+/* ---------- 푸터 ---------- */
+.site-footer{padding:44px 0;border-top:1px solid var(--line)}
+.footer-inner{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;font-size:12.5px;color:var(--meta)}
+.footer-inner a:hover{color:#fff}
+.footer-links{display:flex;gap:22px}
+
+/* ---------- 반응형 ---------- */
+@media (max-width:1000px){
+  .hero{grid-template-columns:1fr 1fr;gap:36px}
+  .stack{grid-column:1 / -1}
+  .stack{display:grid;grid-template-columns:1fr 1fr;gap:0 36px}
+  .item + .item{border-top:1px solid var(--line)}
+  .strip-grid{grid-template-columns:1fr 1fr;gap:32px}
+  .headline{font-size:46px}
+}
+@media (max-width:680px){
+  .wrap{padding:0 20px}
+  .nav{display:none}
+  .hero{grid-template-columns:1fr;gap:30px;padding-bottom:40px}
+  .stack{grid-template-columns:1fr}
+  .byline{padding-top:26px}
+  .strip-grid{grid-template-columns:1fr;gap:26px}
+  .headline{font-size:38px}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+
+<!-- ================= 헤더 ================= -->
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="logo" href="/">Jaehyun Lee</a>
+    <nav class="nav">
+      <a href="#about">About</a>
+      <a href="#research">Research</a>
+      <a href="#contact">Contact</a>
+      <a href="#notice">Notice</a>
+    </nav>
+    <a class="btn-ghost" href="#contact">Curriculum Vitae</a>
+  </div>
+</header>
+
+<!-- ================= 히어로 ================= -->
+<main class="wrap">
+  <section class="hero">
+
+    <!-- 왼쪽: 헤드라인 + 요약 + 메타 -->
+    <div class="hero-left">
+      <h1 class="headline">Corporate Digital Responsibility in Online Travel Platforms</h1>
+      <p class="dek">
+        플랫폼 알고리즘이 여행자의 선택을 어떻게 매개하는지, 그리고 그 과정에서
+        기업이 지는 디지털 책임의 경계는 어디인지를 연구합니다. 2026년부터 2031년까지
+        한국연구재단 인문사회학술연구교수 과제로 수행됩니다.
+      </p>
+      <div class="byline">
+        <span>Research Program</span>
+        <span>NRF 2026S1A5B5A16012577</span>
+        <span>2026—2031</span>
+      </div>
+    </div>
+
+    <!-- 가운데: 대표 이미지 (images/hero.jpg 를 올리면 표시됩니다) -->
+    <div class="hero-figure" style="background-image:url('images/hero.jpg')" role="img" aria-label="대표 이미지"></div>
+
+    <!-- 오른쪽: 진행 중인 연구 4건 -->
+    <div class="stack">
+
+      <article class="item">
+        <a href="#research"><div class="thumb" style="background-image:url('images/thumb1.jpg')"></div></a>
+        <div>
+          <div class="item-meta"><span>Working paper</span><i></i><span>2026</span></div>
+          <a href="#research"><h3>Algorithmic Sensemaking on OTA Platforms: Tourist Folk Theories</h3></a>
+          <div class="item-meta"><span>BERTopic · Gioia</span></div>
+        </div>
+      </article>
+
+      <article class="item">
+        <a href="#research"><div class="thumb" style="background-image:url('images/thumb2.jpg')"></div></a>
+        <div>
+          <div class="item-meta"><span>Working paper</span><i></i><span>2026</span></div>
+          <a href="#research"><h3>Reading the Safari Servicescape through Multimodal Review Analysis</h3></a>
+          <div class="item-meta"><span>CLIP · 167,000 reviews</span></div>
+        </div>
+      </article>
+
+      <article class="item">
+        <a href="#research"><div class="thumb" style="background-image:url('images/thumb3.jpg')"></div></a>
+        <div>
+          <div class="item-meta"><span>Under review</span><i></i><span>2026</span></div>
+          <a href="#research"><h3>Walkability and Guest Satisfaction in Urban Short-term Rentals</h3></a>
+          <div class="item-meta"><span>HRNetV2 · fsQCA</span></div>
+        </div>
+      </article>
+
+      <article class="item">
+        <a href="#research"><div class="thumb" style="background-image:url('images/thumb4.jpg')"></div></a>
+        <div>
+          <div class="item-meta"><span>Research note</span><i></i><span>2026</span></div>
+          <a href="#research"><h3>Sacred Humanoids: Service Robots in Religious Tourism</h3></a>
+          <div class="item-meta"><span>Legitimacy perspective</span></div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+</main>
+
+<!-- ================= 하단 4단 ================= -->
+<section class="wrap strip">
+  <div class="strip-grid">
+
+    <article>
+      <div class="item-meta"><span>Method</span><i></i><span>Computational</span></div>
+      <a href="#research"><h3>Multimodal deep learning for tourism environments</h3></a>
+      <div class="item-meta"><span>Vision · Language models</span></div>
+    </article>
+
+    <article>
+      <div class="item-meta"><span>Method</span><i></i><span>Qualitative</span></div>
+      <a href="#research"><h3>Hermeneutic phenomenology in memorable tourism experience</h3></a>
+      <div class="item-meta"><span>van Manen</span></div>
+    </article>
+
+    <article>
+      <div class="item-meta"><span>Domain</span><i></i><span>Platform</span></div>
+      <a href="#research"><h3>Trust and experiential value in cryptocurrency-based travel platforms</h3></a>
+      <div class="item-meta"><span>Published in IJHM</span></div>
+    </article>
+
+    <article>
+      <div class="item-meta"><span>Domain</span><i></i><span>Policy</span></div>
+      <a href="#research"><h3>Input–output analysis of urban tourism economic impact</h3></a>
+      <div class="item-meta"><span>Seoul Tourism Foundation</span></div>
+    </article>
+
+  </div>
+</section>
+
+<!-- ================= 푸터 ================= -->
+<footer class="site-footer" id="contact">
+  <div class="wrap footer-inner">
+    <div>© 2026 Jaehyun Lee. Korean Federation of Humanities and Social Sciences.</div>
+    <div class="footer-links">
+      <a href="mailto:winegrasshopper@gmail.com">Email</a>
+      <a href="#">Google Scholar</a>
+      <a href="#">ORCID</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
