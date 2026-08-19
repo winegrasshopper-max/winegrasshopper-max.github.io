@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Papers — Jaehyun Lee</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<style>
+:root{
+  --bg:#000;--fg:#fff;--dim:#9A948E;--faint:#6B6560;
+  --line:rgba(255,255,255,0.30);--hair:rgba(255,255,255,0.14);
+  --key:#7FB2E5;
+  --pad:24px;
+  --sans:"Pretendard Variable",Pretendard,-apple-system,system-ui,sans-serif;
+  --serif:"EB Garamond",Georgia,serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--fg);font-family:var(--sans);font-size:14px;line-height:1.5;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+a:focus-visible{outline:1px solid currentColor;outline-offset:2px}
+.pad{padding-left:var(--pad);padding-right:var(--pad)}
+
+/* 헤더 */
+.masthead{display:flex;align-items:center;gap:12px;padding:22px 0 20px}
+.logo{width:30px;height:30px;flex:0 0 auto}
+.mark{font-size:15px;font-weight:500;line-height:1.15;white-space:nowrap}
+.mark small{display:block;font-weight:400;color:var(--dim);font-size:12px;margin-top:1px}
+.rule{flex:1;height:1px;background:var(--line)}
+.inst{font-size:12px;color:var(--dim);white-space:nowrap}
+
+/* 탭 + 검색 */
+.tabs{display:flex;align-items:center;gap:14px;padding-bottom:18px}
+.tabs h1{font-size:19px;font-weight:600}
+.tabs .sep{color:var(--faint)}
+.tabs label{font-size:14px;color:var(--dim)}
+#q{
+  background:transparent;border:none;border-bottom:1px solid var(--line);
+  color:var(--fg);font-family:var(--sans);font-size:14px;
+  padding:4px 2px;width:210px;outline:none;
+}
+#q:focus{border-color:var(--fg)}
+
+/* 본체 2단 */
+.shell{display:grid;grid-template-columns:1fr 250px;gap:44px;padding-bottom:70px}
+
+/* 상태줄 */
+.status{display:flex;align-items:baseline;gap:10px;padding-bottom:22px;border-bottom:1px solid var(--hair);margin-bottom:24px}
+.status b{font-size:19px;font-weight:600}
+.status span{font-size:13px;color:var(--dim)}
+
+/* 연도 그룹 */
+.ygroup{margin-bottom:30px}
+.ygroup > h2{font-size:17px;font-weight:600;margin-bottom:16px}
+
+/* 항목 */
+.p{display:grid;grid-template-columns:16px 1fr;gap:9px;margin-bottom:17px}
+.p::before{content:"→";color:var(--dim);line-height:1.5}
+.p .au{font-weight:600;line-height:1.45}
+.p .au .yr{font-weight:400;color:var(--dim)}
+.p .ti{font-weight:600;line-height:1.45;margin-top:1px}
+.p .jn{font-family:var(--serif);font-style:italic;font-size:14.5px;color:var(--dim);margin-top:1px}
+.p .lk{display:inline-block;margin-top:4px;font-size:11.5px;color:var(--key)}
+.p .lk:hover{text-decoration:underline}
+
+/* 사이드바 */
+.side h3{font-size:14px;font-weight:600;color:var(--key);margin:0 0 11px}
+.side .facet{margin-bottom:28px}
+.frow{
+  display:grid;grid-template-columns:34px 1fr 18px;gap:9px;
+  align-items:center;padding:2px 0;cursor:pointer;font-size:13.5px;
+}
+.frow:hover .fl{color:var(--fg)}
+.frow .fn{text-align:right;color:var(--fg);font-variant-numeric:tabular-nums}
+.frow .fl{color:var(--dim);line-height:1.35}
+.frow input{
+  appearance:none;width:14px;height:14px;border:1px solid var(--line);
+  background:transparent;cursor:pointer;
+}
+.frow input:checked{background:var(--fg);border-color:var(--fg)}
+.clear{margin-top:6px;font-size:12.5px;color:var(--faint);cursor:pointer;background:none;border:none;font-family:var(--sans)}
+.clear:hover{color:var(--fg)}
+
+.empty{color:var(--dim);padding:20px 0}
+
+/* 푸터 */
+.footbar{border-top:1px solid var(--line);padding:22px 0 40px;font-size:13px;color:var(--dim)}
+.footbar a:hover{color:var(--fg)}
+
+@media (max-width:900px){
+  .shell{grid-template-columns:1fr;gap:36px}
+  .side{order:-1;display:grid;grid-template-columns:1fr 1fr;gap:22px}
+}
+@media (max-width:560px){
+  :root{--pad:18px}
+  .side{grid-template-columns:1fr}
+  #q{width:150px}
+  .inst{display:none}
+}
+</style>
+</head>
+<body>
+
+<header class="pad masthead">
+  <a href="index.html" style="display:flex;align-items:center;gap:12px">
+    <img class="logo" src="images/logo-white.png" alt="">
+    <span class="mark">Jaehyun Lee<small>tourism science.</small></span>
+  </a>
+  <div class="rule"></div>
+  <div class="inst">KFHSS</div>
+</header>
+
+<div class="pad tabs">
+  <h1>Papers</h1>
+  <span class="sep">|</span>
+  <label for="q">Search</label>
+  <input id="q" type="search" autocomplete="off" aria-label="Search papers">
+</div>
+
+<div class="pad shell">
+
+  <!-- ===================== 목록 =====================
+       항목 추가 방법: 아래 <article class="p"> 한 덩어리를 복사하고
+         data-year  : 연도
+         data-type  : journal / conference / chapter / report / manuscript
+         data-author : 공저자 이름 (쉼표로 구분)
+       세 가지만 맞춰 주시면 연도 묶음과 필터 건수가 자동으로 갱신됩니다.
+  ================================================== -->
+  <main>
+    <div class="status">
+      <b id="count">0</b><span>Items</span>
+      <span class="sep" style="color:var(--faint)">|</span>
+      <span>sorted by year, then by title</span>
+    </div>
+
+    <div id="list">
+
+      <article class="p" data-year="2026" data-type="manuscript" data-author="">
+        <div>
+          <div class="au">Lee, J. <span class="yr">(2026)</span></div>
+          <div class="ti">How travelers make sense of what they cannot see: Folk theories of algorithmic curation on online travel platforms</div>
+          <div class="jn">Manuscript in preparation.</div>
+        </div>
+      </article>
+
+      <article class="p" data-year="2026" data-type="manuscript" data-author="">
+        <div>
+          <div class="au">Lee, J. <span class="yr">(2026)</span></div>
+          <div class="ti">Reading the safari servicescape: A multimodal analysis of visitor reviews and imagery</div>
+          <div class="jn">Manuscript in preparation.</div>
+        </div>
+      </article>
+
+      <article class="p" data-year="2026" data-type="manuscript" data-author="">
+        <div>
+          <div class="au">Lee, J. <span class="yr">(2026)</span></div>
+          <div class="ti">Sacred humanoids: Service robots in religious tourism as a question of legitimacy</div>
+          <div class="jn">Research note under review.</div>
+        </div>
+      </article>
+
+      <article class="p" data-year="2026" data-type="conference" data-author="">
+        <div>
+          <div class="au">Lee, J. <span class="yr">(2026)</span></div>
+          <div class="ti">TravelTech and human–technology co-evolution: A critical posthumanist reading</div>
+          <div class="jn">APacCHRIE Conference.</div>
+          <a class="lk" href="#">[link]</a>
+        </div>
+      </article>
+
+      <article class="p" data-year="2025" data-type="journal" data-author="">
+        <div>
+          <div class="au">Lee, J. <span class="yr">(2025)</span></div>
+          <div class="ti">Continuance intention toward cryptocurrency-based online travel platforms: A trust transfer perspective</div>
+          <div class="jn">International Journal of Hospitality Management.</div>
+          <a class="lk" href="#">[link]</a>
+        </div>
+      </article>
+
+      <article class="p" data-year="2025" data-type="report" data-author="">
+        <div>
+          <div class="au">Lee, J. <span class="yr">(2025)</span></div>
+          <div class="ti">Economic impact of tourism in Seoul: An input–output analysis</div>
+          <div class="jn">Seoul Tourism Foundation, commissioned report.</div>
+        </div>
+      </article>
+
+      <article class="p" data-year="2025" data-type="chapter" data-author="">
+        <div>
+          <div class="au">Lee, J. <span class="yr">(2025)</span></div>
+          <div class="ti">Walkability and guest satisfaction in peer-to-peer accommodation: Evidence from street-level imagery</div>
+          <div class="jn">Doctoral dissertation, Hanyang University.</div>
+        </div>
+      </article>
+
+      <article class="p" data-year="2024" data-type="journal" data-author="">
+        <div>
+          <div class="au">Lee, J. <span class="yr">(2024)</span></div>
+          <div class="ti">등산 관광객의 감각경관이 주의회복과 만족에 미치는 영향</div>
+          <div class="jn">관광연구논총.</div>
+          <a class="lk" href="#">[link]</a>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="empty" id="empty" hidden>No papers match the current filters.</div>
+  </main>
+
+  <!-- ===================== 사이드바 ===================== -->
+  <aside class="side">
+    <div class="facet">
+      <h3>Publication Type</h3>
+      <div id="f-type"></div>
+    </div>
+    <div class="facet">
+      <h3>Year</h3>
+      <div id="f-year"></div>
+    </div>
+    <div class="facet">
+      <button class="clear" id="clear">Clear all filters</button>
+    </div>
+  </aside>
+
+</div>
+
+<footer class="pad footbar">
+  <a href="index.html">← Back to overview</a> &nbsp;·&nbsp; © 2026 Jaehyun Lee
+</footer>
+
+<script>
+(function(){
+  var TYPE_LABEL = {
+    journal:"scholarly journal",
+    conference:"conference paper",
+    chapter:"book chapter",
+    report:"report",
+    manuscript:"manuscript"
+  };
+  var ORDER = ["journal","conference","chapter","report","manuscript"];
+
+  var list  = document.getElementById('list');
+  var items = Array.prototype.slice.call(list.querySelectorAll('.p'));
+  var q     = document.getElementById('q');
+  var countEl = document.getElementById('count');
+  var emptyEl = document.getElementById('empty');
+
+  // 항목마다 검색용 텍스트를 미리 저장
+  items.forEach(function(el){
+    el.dataset.hay = el.textContent.toLowerCase();
+  });
+
+  // ---------- 필터 UI 만들기 ----------
+  function tally(key){
+    var m = {};
+    items.forEach(function(el){
+      var v = el.dataset[key];
+      if(!v) return;
+      m[v] = (m[v]||0) + 1;
+    });
+    return m;
+  }
+
+  function buildFacet(container, counts, keys, labeler){
+    container.innerHTML = '';
+    keys.forEach(function(k){
+      if(!counts[k]) return;
+      var row = document.createElement('label');
+      row.className = 'frow';
+      row.innerHTML =
+        '<span class="fn">' + counts[k] + '</span>' +
+        '<span class="fl">' + labeler(k) + '</span>' +
+        '<input type="checkbox" value="' + k + '">';
+      container.appendChild(row);
+    });
+  }
+
+  var typeCounts = tally('type');
+  var yearCounts = tally('year');
+  var years = Object.keys(yearCounts).sort(function(a,b){return b-a});
+
+  buildFacet(document.getElementById('f-type'), typeCounts, ORDER,
+             function(k){ return TYPE_LABEL[k] || k; });
+  buildFacet(document.getElementById('f-year'), yearCounts, years,
+             function(k){ return k; });
+
+  // ---------- 걸러내기 ----------
+  function checkedValues(sel){
+    return Array.prototype.slice
+      .call(document.querySelectorAll(sel + ' input:checked'))
+      .map(function(i){ return i.value; });
+  }
+
+  function render(){
+    var types = checkedValues('#f-type');
+    var yrs   = checkedValues('#f-year');
+    var term  = q.value.trim().toLowerCase();
+
+    var visible = items.filter(function(el){
+      if(types.length && types.indexOf(el.dataset.type) === -1) return false;
+      if(yrs.length   && yrs.indexOf(el.dataset.year)   === -1) return false;
+      if(term && el.dataset.hay.indexOf(term) === -1) return false;
+      return true;
+    });
+
+    // 기존 연도 머리글 제거
+    Array.prototype.slice.call(list.querySelectorAll('.ygroup'))
+      .forEach(function(g){
+        while(g.firstChild) list.insertBefore(g.firstChild, g);
+        list.removeChild(g);
+      });
+
+    items.forEach(function(el){ el.hidden = true; });
+
+    // 연도별로 다시 묶기
+    var byYear = {};
+    visible.forEach(function(el){
+      (byYear[el.dataset.year] = byYear[el.dataset.year] || []).push(el);
+    });
+
+    Object.keys(byYear).sort(function(a,b){return b-a}).forEach(function(y){
+      var g = document.createElement('div');
+      g.className = 'ygroup';
+      var h = document.createElement('h2');
+      h.textContent = y + ' (' + byYear[y].length + ')';
+      g.appendChild(h);
+      byYear[y].forEach(function(el){ el.hidden = false; g.appendChild(el); });
+      list.appendChild(g);
+    });
+
+    countEl.textContent = visible.length;
+    emptyEl.hidden = visible.length > 0;
+  }
+
+  document.querySelectorAll('.side input').forEach(function(i){
+    i.addEventListener('change', render);
+  });
+  q.addEventListener('input', render);
+  document.getElementById('clear').addEventListener('click', function(){
+    document.querySelectorAll('.side input').forEach(function(i){ i.checked = false; });
+    q.value = '';
+    render();
+  });
+
+  render();
+})();
+</script>
+
+</body>
+</html>

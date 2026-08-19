@@ -1,235 +1,392 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Jaehyun Lee — Tourism Science</title>
+<title>Jaehyun Lee, Tourism Science</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Noto+Serif+KR:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
 <style>
 :root{
-  --bg:#0A0A0A;
+  --bg:#000000;
   --fg:#FFFFFF;
-  --meta:#8A8A8A;
-  --line:rgba(255,255,255,0.14);
-  --line-dark:rgba(0,0,0,0.12);
-  --maxw:1200px;
+  --dim:#9A948E;
+  --line:rgba(255,255,255,0.30);
+  --tile:#141414;
+  --pad:42px;
+  --serif:"EB Garamond","Noto Serif KR",Georgia,serif;
+  --sans:"Pretendard Variable",Pretendard,-apple-system,system-ui,sans-serif;
 }
 *{margin:0;padding:0;box-sizing:border-box}
-html{-webkit-text-size-adjust:100%}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
 body{
-  font-family:"Pretendard Variable",Pretendard,-apple-system,system-ui,sans-serif;
   background:var(--bg);color:var(--fg);
-  font-weight:400;line-height:1.6;
+  font-family:var(--serif);font-size:16px;line-height:1.42;
   -webkit-font-smoothing:antialiased;
 }
-img{display:block;max-width:100%}
 a{color:inherit;text-decoration:none}
-a:focus-visible{outline:2px solid #fff;outline-offset:3px}
-
-.wrap{max-width:var(--maxw);margin:0 auto;padding:0 32px}
+a:hover{color:var(--dim)}
+a:focus-visible{outline:1px solid currentColor;outline-offset:3px}
+.pad{padding-left:var(--pad);padding-right:var(--pad)}
 
 /* ---------- 헤더 ---------- */
-.site-header{padding:26px 0}
-.header-inner{display:flex;align-items:center;justify-content:space-between;gap:32px}
-.logo{font-size:20px;font-weight:400;letter-spacing:-0.01em;white-space:nowrap}
-.nav{display:flex;gap:34px;font-size:14px;color:#D8D8D8}
-.nav a:hover{color:#fff}
-.btn-ghost{
-  border:1px solid var(--line);border-radius:100px;
-  padding:9px 20px;font-size:13px;white-space:nowrap;
+.masthead{display:flex;align-items:center;gap:22px;padding-top:26px;padding-bottom:26px}
+.mark{font-family:var(--sans);font-size:16px;font-weight:500;line-height:1.15;white-space:nowrap}
+.mark small{display:block;font-weight:400;color:var(--dim);font-size:12px;margin-top:2px}
+.rule{flex:1;height:1px;background:var(--line)}
+.inst{font-family:var(--sans);font-size:12px;color:var(--dim);white-space:nowrap;letter-spacing:0.02em}
+
+/* ---------- 소개 4단 ---------- */
+.intro{display:grid;grid-template-columns:1fr 1.35fr 1.35fr 1.35fr;gap:36px;padding-bottom:66px}
+.tagline{font-style:italic;font-size:18px;line-height:1.38}
+.intro p{font-size:16px;line-height:1.44}
+.intro p + p{margin-top:1em}
+.intro .lk{border-bottom:none}
+.intro h2{
+  font-family:var(--sans);font-size:12px;font-weight:500;
+  letter-spacing:0.04em;text-transform:uppercase;
+  padding-bottom:9px;margin-bottom:13px;
+  border-bottom:1px solid var(--line);
 }
-.btn-ghost:hover{background:#fff;color:#0A0A0A;border-color:#fff}
-
-/* ---------- 히어로 ---------- */
-.hero{display:grid;grid-template-columns:1fr 1fr 1fr;gap:44px;padding:34px 0 56px}
-
-.headline{
-  font-size:60px;font-weight:300;
-  line-height:1.06;letter-spacing:-0.025em;
-  margin-bottom:34px;
+.intro .roles{font-size:15.5px;line-height:1.5}
+.intro .roles .r{display:grid;grid-template-columns:64px 1fr;gap:12px;margin-bottom:10px}
+.intro .roles .r .d{color:var(--dim);font-variant-numeric:tabular-nums;white-space:nowrap}
+.intro .roles .r .role{
+  font-family:var(--sans);font-size:12.5px;color:var(--dim);
+  margin-top:3px;line-height:1.4;
 }
-.dek{font-size:14px;line-height:1.65;color:#C9C9C9;max-width:34em}
-.byline{
-  margin-top:auto;padding-top:52px;
-  font-size:12.5px;color:var(--meta);
-  display:flex;flex-wrap:wrap;gap:14px;align-items:center;
+.portrait{
+  margin-top:26px;width:100%;max-width:230px;aspect-ratio:3/4;
+  background:#141414 center/cover no-repeat;
+  border:1px solid rgba(255,255,255,0.10);
 }
-.byline span:not(:last-child)::after{content:"";display:inline-block;width:1px;height:11px;background:var(--meta);margin-left:14px;vertical-align:-1px}
-.hero-left{display:flex;flex-direction:column}
 
-/* 가운데 이미지 — 세로 3:4 */
-.hero-figure{aspect-ratio:3/4;background:#1C1C1C center/cover no-repeat}
+/* ---------- 프로젝트 ---------- */
+.band-head{display:flex;align-items:center;gap:18px;padding-bottom:18px}
+.band-head h2{font-family:var(--sans);font-size:14px;font-weight:500}
+.count{font-family:var(--sans);font-size:11.5px;color:var(--dim)}
 
-/* 오른쪽 리스트 */
-.stack{display:flex;flex-direction:column;gap:0}
-.item{display:grid;grid-template-columns:104px 1fr;gap:18px;padding:18px 0}
-.item + .item{border-top:1px solid var(--line)}
-.item:first-child{padding-top:0}
-.item .thumb{aspect-ratio:1/1;background:#1C1C1C center/cover no-repeat}
-.item-meta{font-size:11.5px;color:var(--meta);display:flex;gap:12px;align-items:center}
-.item-meta i{font-style:normal;width:1px;height:10px;background:var(--meta);display:inline-block}
-.item h3{
-  font-size:16px;font-weight:400;line-height:1.34;letter-spacing:-0.015em;
-  margin:7px 0 9px;
-  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;
+.rail{
+  display:flex;gap:20px;overflow-x:auto;padding-bottom:22px;
+  scroll-snap-type:x proximity;
 }
-.item a:hover h3{text-decoration:underline;text-underline-offset:3px}
+.rail::-webkit-scrollbar{height:5px}
+.rail::-webkit-scrollbar-track{background:rgba(255,255,255,0.07)}
+.rail::-webkit-scrollbar-thumb{background:rgba(255,255,255,0.35)}
+.card{flex:0 0 auto;width:146px;scroll-snap-align:start}
+.card .tile{
+  width:146px;height:146px;background:var(--tile);
+  background-size:cover;background-position:center;
+  border:1px solid rgba(255,255,255,0.10);
+  transition:opacity .15s ease;
+}
+.card:hover .tile{opacity:.72}
+.card .cap{text-align:center;padding-top:11px;font-size:14px;line-height:1.3}
+.card .yr{text-align:center;font-size:13px;color:var(--dim);padding-top:3px}
+/* 이미지가 없을 때도 갤러리처럼 보이도록 칸마다 미세한 명도차 */
+.card:nth-child(4n+1) .tile{background-color:#161616}
+.card:nth-child(4n+2) .tile{background-color:#111111}
+.card:nth-child(4n+3) .tile{background-color:#1B1B1B}
+.card:nth-child(4n+4) .tile{background-color:#0E0E0E}
 
-/* ---------- 하단 4단 ---------- */
-.strip{border-top:1px solid var(--line);padding:30px 0 72px}
-.strip-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:36px}
-.strip .item-meta{margin-bottom:11px}
-.strip h3{font-size:17px;font-weight:400;line-height:1.34;letter-spacing:-0.015em;margin-bottom:11px}
-.strip a:hover h3{text-decoration:underline;text-underline-offset:3px}
+/* ---------- 하단 5단 ---------- */
+.grid5{
+  display:grid;grid-template-columns:repeat(5,1fr);gap:36px;
+  padding-top:64px;padding-bottom:70px;
+}
+.col h3{font-family:var(--sans);font-size:14px;font-weight:500;margin-bottom:20px}
+.col p{font-size:15px;line-height:1.45;margin-bottom:15px}
+.arrow{
+  font-family:var(--sans);font-size:13px;font-weight:500;
+  display:flex;gap:8px;align-items:baseline;margin-bottom:9px;
+}
+.arrow::before{content:"→";color:var(--fg);flex:0 0 auto}
+.sub{font-family:var(--sans);font-size:12.5px;font-weight:500;margin:16px 0 5px}
+.body-list{font-size:14.5px;line-height:1.5;color:#DCD8D4}
+.it{font-style:italic;color:var(--dim);font-size:14px}
+.years{display:flex;flex-direction:column;gap:7px;margin-bottom:16px}
+.years .y-sub{font-size:14.5px;color:var(--dim);padding-left:18px;line-height:1.55}
+.entry{margin-bottom:19px}
+.entry .ti{font-family:var(--sans);font-size:13px;font-weight:500;line-height:1.4;margin-bottom:3px;display:flex;gap:8px}
+.entry .ti::before{content:"→";flex:0 0 auto}
+.entry .au{font-size:14.5px;line-height:1.45}
+.right-link{text-align:right;font-size:14px;color:var(--dim);margin-top:6px}
 
 /* ---------- 푸터 ---------- */
-.site-footer{padding:44px 0;border-top:1px solid var(--line)}
-.footer-inner{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;font-size:12.5px;color:var(--meta)}
-.footer-inner a:hover{color:#fff}
-.footer-links{display:flex;gap:22px}
+.footbar{border-top:1px solid var(--line);padding-top:26px;padding-bottom:44px}
+.foot{display:grid;grid-template-columns:1fr 1.4fr 1.2fr 1.2fr 0.8fr;gap:34px;font-size:14.5px;line-height:1.5}
+.foot .brandline{font-family:var(--sans);font-size:14px;font-weight:500}
+.foot b{font-weight:500}
+.foot .dimtxt{color:var(--dim)}
 
 /* ---------- 반응형 ---------- */
-@media (max-width:1000px){
-  .hero{grid-template-columns:1fr 1fr;gap:36px}
-  .stack{grid-column:1 / -1}
-  .stack{display:grid;grid-template-columns:1fr 1fr;gap:0 36px}
-  .item + .item{border-top:1px solid var(--line)}
-  .strip-grid{grid-template-columns:1fr 1fr;gap:32px}
-  .headline{font-size:46px}
+@media (max-width:1100px){
+  .intro{grid-template-columns:1fr 1fr;gap:30px}
+  .grid5{grid-template-columns:repeat(2,1fr);gap:34px}
+  .foot{grid-template-columns:1fr 1fr;gap:26px}
 }
-@media (max-width:680px){
-  .wrap{padding:0 20px}
-  .nav{display:none}
-  .hero{grid-template-columns:1fr;gap:30px;padding-bottom:40px}
-  .stack{grid-template-columns:1fr}
-  .byline{padding-top:26px}
-  .strip-grid{grid-template-columns:1fr;gap:26px}
-  .headline{font-size:38px}
+@media (max-width:640px){
+  :root{--pad:20px}
+  .intro{grid-template-columns:1fr;gap:22px;padding-bottom:46px}
+  .tagline{font-size:20px}
+  .grid5{grid-template-columns:1fr;gap:34px;padding-top:44px}
+  .foot{grid-template-columns:1fr}
+  .inst{display:none}
+  .card,.card .tile{width:132px}
+  .card .tile{height:132px}
 }
-@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
 </head>
 <body>
 
 <!-- ================= 헤더 ================= -->
-<header class="site-header">
-  <div class="wrap header-inner">
-    <a class="logo" href="/">Jaehyun Lee</a>
-    <nav class="nav">
-      <a href="#about">About</a>
-      <a href="#research">Research</a>
-      <a href="#contact">Contact</a>
-      <a href="#notice">Notice</a>
-    </nav>
-    <a class="btn-ghost" href="#contact">Curriculum Vitae</a>
-  </div>
+<header class="pad masthead">
+  <img class="logo" src="images/logo-white.png" alt="">
+  <div class="mark">Jaehyun Lee<small>tourism science.</small></div>
+  <div class="rule"></div>
+  <div class="inst">KFHSS</div>
 </header>
 
-<!-- ================= 히어로 ================= -->
-<main class="wrap">
-  <section class="hero">
+<!-- ================= 소개 4단 ================= -->
+<section class="pad intro">
+  <div>
+    <div class="tagline">Platform algorithms and corporate digital responsibility through computational social science</div>
+    <!-- 인물 사진: images/portrait.jpg 로 올리시면 표시됩니다 (세로 3:4 권장) -->
+    <div class="portrait" style="background-image:url('images/portrait.jpg')" role="img" aria-label="Jaehyun Lee"></div>
+  </div>
 
-    <!-- 왼쪽: 헤드라인 + 요약 + 메타 -->
-    <div class="hero-left">
-      <h1 class="headline">Jaehyun Lee</h1>
-      <p class="dek">
-        플랫폼 알고리즘이 여행자의 선택을 어떻게 매개하는지, 그리고 그 과정에서
-        기업이 지는 디지털 책임의 경계는 어디인지를 연구합니다. 2026년부터 2031년까지
-        한국연구재단 인문사회학술연구교수 과제로 수행됩니다.
-      </p>
-      <div class="byline">
-        <span>Research Program</span>
-        <span>NRF 2026S1A5B5A16012577</span>
-        <span>2026—2031</span>
+  <div>
+    <h2>About</h2>
+    <p>I have been curious since I was a child, usually about too many things at once. That habit never went away, and it is why I enjoy looking at the same thing from several angles rather than settling into one. My degree is in tourism science, but the training kept widening along the way to include computer science, qualitative inquiry, and whatever else a question turned out to require.</p>
+    <p>I would rather chase what puzzles me than count what I publish. The projects I take on tend to be the ones I find genuinely curious, genuinely enjoyable, or genuinely difficult.</p>
+  </div>
+
+  <div>
+    <h2>Research Interests</h2>
+    <p>Information management, machine learning, blockchain, tourist behavior, and digital ethics.</p>
+    <p>Digital ethics is where most of my attention sits now. The National Research Foundation of Korea supports this line of work with a five-year grant of KRW 200 million, running from 2026 to 2031, on corporate digital responsibility in online travel platforms.</p>
+    <p>I have no preferred method. Qualitative, quantitative, or big data, I use whichever one the question actually calls for, and I am willing to pick up a new one when none of them fit.</p>
+  </div>
+
+  <div>
+    <h2>Affiliations &amp; Appointments</h2>
+    <div class="roles">
+      <div class="r">
+        <span class="d">2026–</span>
+        <span>Research Professor, <span class="lk">Korean Federation of Humanities and Social Sciences</span></span>
+      </div>
+      <div class="r">
+        <span class="d">2025–26</span>
+        <span>Postdoctoral Researcher, Tourism Research Institute, Hanyang University</span>
+      </div>
+      <div class="r">
+        <span class="d">2025</span>
+        <span>PhD in Tourism Science, Hanyang University</span>
+      </div>
+      <div class="r">
+        <span class="d">2020–21</span>
+        <span>Contract Researcher, Korea Institute of Science and Technology Information</span>
       </div>
     </div>
+  </div>
+</section>
 
-    <!-- 가운데: 대표 이미지 (images/hero.jpg 를 올리면 표시됩니다) -->
-    <div class="hero-figure" style="background-image:url('images/hero.jpg')" role="img" aria-label="대표 이미지"></div>
+<!-- ================= 프로젝트 =================
+     새 항목 추가: <a class="card"> 한 덩어리 복사 → 제목·연도만 수정.
+     사진은 images/ 폴더에 넣고 style의 파일명을 바꾸시면 됩니다.
+============================================== -->
+<section class="pad">
+  <div class="band-head">
+    <h2>Projects</h2>
+    <span class="count">13</span>
+  </div>
 
-    <!-- 오른쪽: 진행 중인 연구 4건 -->
-    <div class="stack">
+  <div class="rail">
 
-      <article class="item">
-        <a href="#research"><div class="thumb" style="background-image:url('images/thumb1.jpg')"></div></a>
-        <div>
-          <div class="item-meta"><span>Working paper</span><i></i><span>2026</span></div>
-          <a href="#research"><h3>Algorithmic Sensemaking on OTA Platforms: Tourist Folk Theories</h3></a>
-          <div class="item-meta"><span>BERTopic · Gioia</span></div>
-        </div>
-      </article>
+    <a class="card" href="#">
+      <div class="tile" style="background-image:url('images/p01.jpg')"></div>
+      <div class="cap">Digital Responsibility</div>
+      <div class="yr">2026</div>
+    </a>
 
-      <article class="item">
-        <a href="#research"><div class="thumb" style="background-image:url('images/thumb2.jpg')"></div></a>
-        <div>
-          <div class="item-meta"><span>Working paper</span><i></i><span>2026</span></div>
-          <a href="#research"><h3>Reading the Safari Servicescape through Multimodal Review Analysis</h3></a>
-          <div class="item-meta"><span>CLIP · 167,000 reviews</span></div>
-        </div>
-      </article>
+    <a class="card" href="#">
+      <div class="tile" style="background-image:url('images/p02.jpg')"></div>
+      <div class="cap">Algorithmic Sensemaking</div>
+      <div class="yr">2026</div>
+    </a>
 
-      <article class="item">
-        <a href="#research"><div class="thumb" style="background-image:url('images/thumb3.jpg')"></div></a>
-        <div>
-          <div class="item-meta"><span>Under review</span><i></i><span>2026</span></div>
-          <a href="#research"><h3>Walkability and Guest Satisfaction in Urban Short-term Rentals</h3></a>
-          <div class="item-meta"><span>HRNetV2 · fsQCA</span></div>
-        </div>
-      </article>
+    <a class="card" href="#">
+      <div class="tile" style="background-image:url('images/p03.jpg')"></div>
+      <div class="cap">Safari Servicescape</div>
+      <div class="yr">2026</div>
+    </a>
 
-      <article class="item">
-        <a href="#research"><div class="thumb" style="background-image:url('images/thumb4.jpg')"></div></a>
-        <div>
-          <div class="item-meta"><span>Research note</span><i></i><span>2026</span></div>
-          <a href="#research"><h3>Sacred Humanoids: Service Robots in Religious Tourism</h3></a>
-          <div class="item-meta"><span>Legitimacy perspective</span></div>
-        </div>
-      </article>
+    <a class="card" href="#">
+      <div class="tile" style="background-image:url('images/p04.jpg')"></div>
+      <div class="cap">Sacred Humanoids</div>
+      <div class="yr">2026</div>
+    </a>
 
-    </div>
-  </section>
-</main>
+    <a class="card" href="#">
+      <div class="tile" style="background-image:url('images/p05.jpg')"></div>
+      <div class="cap">Something Out of Nothing</div>
+      <div class="yr">2026</div>
+    </a>
 
-<!-- ================= 하단 4단 ================= -->
-<section class="wrap strip">
-  <div class="strip-grid">
+    <a class="card" href="#">
+      <div class="tile" style="background-image:url('images/p06.jpg')"></div>
+      <div class="cap">Seoul Tourism Impact</div>
+      <div class="yr">2025</div>
+    </a>
 
-    <article>
-      <div class="item-meta"><span>Method</span><i></i><span>Computational</span></div>
-      <a href="#research"><h3>Multimodal deep learning for tourism environments</h3></a>
-      <div class="item-meta"><span>Vision · Language models</span></div>
-    </article>
+    <a class="card" href="#">
+      <div class="tile" style="background-image:url('images/p07.jpg')"></div>
+      <div class="cap">Walking the Listing</div>
+      <div class="yr">2025</div>
+    </a>
 
-    <article>
-      <div class="item-meta"><span>Method</span><i></i><span>Qualitative</span></div>
-      <a href="#research"><h3>Hermeneutic phenomenology in memorable tourism experience</h3></a>
-      <div class="item-meta"><span>van Manen</span></div>
-    </article>
+    <a class="card" href="#">
+      <div class="tile" style="background-image:url('images/p08.jpg')"></div>
+      <div class="cap">Blockchain Platforms</div>
+      <div class="yr">2025</div>
+    </a>
 
-    <article>
-      <div class="item-meta"><span>Domain</span><i></i><span>Platform</span></div>
-      <a href="#research"><h3>Trust and experiential value in cryptocurrency-based travel platforms</h3></a>
-      <div class="item-meta"><span>Published in IJHM</span></div>
-    </article>
+    <a class="card" href="#">
+      <div class="tile" style="background-image:url('images/p09.jpg')"></div>
+      <div class="cap">Festival Fun</div>
+      <div class="yr">2025</div>
+    </a>
 
-    <article>
-      <div class="item-meta"><span>Domain</span><i></i><span>Policy</span></div>
-      <a href="#research"><h3>Input–output analysis of urban tourism economic impact</h3></a>
-      <div class="item-meta"><span>Seoul Tourism Foundation</span></div>
-    </article>
+    <a class="card" href="#">
+      <div class="tile" style="background-image:url('images/p10.jpg')"></div>
+      <div class="cap">Boredom and Departure</div>
+      <div class="yr">2025</div>
+    </a>
+
+    <a class="card" href="#">
+      <div class="tile" style="background-image:url('images/p11.jpg')"></div>
+      <div class="cap">Hiking Sensescape</div>
+      <div class="yr">2024</div>
+    </a>
+
+    <a class="card" href="#">
+      <div class="tile" style="background-image:url('images/p12.jpg')"></div>
+      <div class="cap">Jeju Tourism Taxation</div>
+      <div class="yr">2024</div>
+    </a>
+
+    <a class="card" href="#">
+      <div class="tile" style="background-image:url('images/p13.jpg')"></div>
+      <div class="cap">TravelTech</div>
+      <div class="yr">2024</div>
+    </a>
 
   </div>
 </section>
 
-<!-- ================= 푸터 ================= -->
-<footer class="site-footer" id="contact">
-  <div class="wrap footer-inner">
-    <div>© 2026 Jaehyun Lee. Korean Federation of Humanities and Social Sciences.</div>
-    <div class="footer-links">
-      <a href="mailto:winegrasshopper@gmail.com">Email</a>
-      <a href="#">Google Scholar</a>
-      <a href="#">ORCID</a>
+<!-- ================= 하단 5단 ================= -->
+<section class="pad grid5">
+
+  <!-- 1. 연구 프로그램 -->
+  <div class="col">
+    <h3>Program</h3>
+    <p>A five-year research program on Corporate Digital Responsibility in online travel platforms, funded by the National Research Foundation of Korea (2026S1A5B5A16012577).</p>
+    <div class="arrow">Research Themes</div>
+    <div class="sub">Platform Governance</div>
+    <div class="body-list">Algorithmic control, ranking opacity, perceived ethical violation</div>
+    <div class="sub">Traveler Response</div>
+    <div class="body-list">Folk theories, sensemaking, coping and resistance</div>
+    <div class="sub">Environment</div>
+    <div class="body-list">Servicescape, walkability, sensescape</div>
+  </div>
+
+  <!-- 2. 논문 -->
+  <div class="col">
+    <h3>Publications</h3>
+
+    <div class="entry">
+      <div class="ti">Continuance intention toward cryptocurrency-based online travel platforms</div>
+      <div class="au">Lee, J.</div>
+      <div class="it">International Journal of Hospitality Management</div>
     </div>
+
+    <div class="entry">
+      <div class="ti">Walkability and guest satisfaction in peer-to-peer accommodation</div>
+      <div class="au">Lee, J.</div>
+      <div class="it">Doctoral dissertation, Hanyang University</div>
+    </div>
+
+    <div class="entry">
+      <div class="ti">등산 관광객의 감각경관이 주의회복과 만족에 미치는 영향</div>
+      <div class="au">Lee, J.</div>
+      <div class="it">관광연구논총</div>
+    </div>
+
+    <div class="right-link"><a href="publications.html">Browse all publications</a></div>
+  </div>
+
+  <!-- 3. 소식 -->
+  <div class="col">
+    <h3>Notice</h3>
+    <div class="years">
+      <div class="arrow">2026</div>
+      <div class="y-sub">Research professorship begins, KFHSS</div>
+      <div class="y-sub">APacCHRIE, stand-up presentation</div>
+    </div>
+    <div class="years">
+      <div class="arrow">2025</div>
+      <div class="y-sub">PhD conferred, Hanyang University</div>
+      <div class="y-sub">Seoul Tourism Foundation, impact study delivered</div>
+    </div>
+    <div class="arrow">2024</div>
+  </div>
+
+  <!-- 4. 학술 활동 -->
+  <div class="col">
+    <h3>Service</h3>
+    <p>Peer review and advisory work across tourism and information systems journals.</p>
+    <div class="sub">Reviewing</div>
+    <div class="body-list">Information Technology &amp; Tourism<br>Tourism Management<br>International Journal of Tourism Research<br>International Journal of Consumer Studies</div>
+    <div class="sub">Advisory</div>
+    <div class="body-list">Technical consultant, Tourism Data Utilization Competition, 2026</div>
+  </div>
+
+  <!-- 5. 약력 -->
+  <div class="col">
+    <h3>About</h3>
+    <div class="body-list">
+      Research Professor, Korean Federation of Humanities and Social Sciences
+    </div>
+    <div class="sub">Previously</div>
+    <div class="body-list">Postdoctoral Researcher, Tourism Research Institute, Hanyang University</div>
+    <div class="sub">Education</div>
+    <div class="body-list">PhD, Tourism Science, Hanyang University<br>MA · BA, Wine Studies<br>WSET Level 3</div>
+    <div class="sub">Methods</div>
+    <div class="body-list">BERTopic · RoBERTa · CLIP · HRNetV2 · SEM · fsQCA · Input–output analysis</div>
+  </div>
+
+</section>
+
+<!-- ================= 푸터 ================= -->
+<footer class="pad footbar">
+  <div class="foot">
+    <div class="brandline">KFHSS</div>
+    <div class="dimtxt">For research inquiries and collaboration,<br>please write to the address on the right.</div>
+    <div>
+      <b>Jaehyun Lee</b><br>
+      Research Professor<br>
+      Seoul, Republic of Korea
+    </div>
+    <div>
+      <a href="mailto:winegrasshopper@gmail.com">winegrasshopper@gmail.com</a><br>
+      <a href="#">Google Scholar</a><br>
+      <a href="#">ORCID</a><br>
+      <a href="#">Curriculum Vitae</a>
+    </div>
+    <div class="brandline">© 2026</div>
   </div>
 </footer>
 
